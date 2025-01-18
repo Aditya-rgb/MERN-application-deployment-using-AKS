@@ -87,4 +87,33 @@ Ensure you have the following before starting:
    ```bash
    kubectl get nodes
    ```
+### Step 4: Deploy Application on AKS
+
+1. Build Docker images for the application components:
+   ```bash
+   docker build -t <docker-hub-username>/mern-frontend ./frontend
+   docker build -t <docker-hub-username>/mern-backend ./backend
+   ```
+2. Push the images to Docker Hub:
+   ```bash
+   docker push <docker-hub-username>/mern-frontend
+   docker push <docker-hub-username>/mern-backend
+   ```
+3. Create Kubernetes deployment and service files in YAML format for each component.
+4. Apply the YAML files:
+   ```bash
+   kubectl apply -f deployment-frontend.yaml
+   kubectl apply -f deployment-backend.yaml
+   ```
+### Step 5: Expose Application
+
+1. Expose the frontend service as a LoadBalancer:
+   ```bash
+   kubectl expose deployment mern-frontend --type=LoadBalancer --name=frontend-service
+   ```
+2. Get the external IP address of the service:
+   ```bash
+   kubectl get service frontend-service
+   ```
+
 
