@@ -56,3 +56,35 @@ Ensure you have the following before starting:
 1. Clone the repository to your local machine:  
    ```bash
    git clone https://github.com/UnpredictablePrashant/SampleMERNwithMicroservices.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd SampleMERNwithMicroservices
+   ```
+
+### Step 2: Create AKS Cluster
+
+1. Log in to your Azure account:
+   ```bash
+   az login
+   ```
+2. Create a resource group:
+   ```bash
+   az group create --name MERNResourceGroup --location eastus
+   ```
+3. Create an AKS cluster:
+   ```bash
+   az aks create --resource-group MERNResourceGroup --name MERNCluster --node-count 2 --enable-addons monitoring --generate-ssh-keys
+   ```
+
+### Step 3: Configure kubectl
+
+1. Connect to the AKS cluster:
+   ```bash
+   az aks get-credentials --resource-group MERNResourceGroup --name MERNCluster
+   ```
+2. Verify the connection:
+   ```bash
+   kubectl get nodes
+   ```
+
