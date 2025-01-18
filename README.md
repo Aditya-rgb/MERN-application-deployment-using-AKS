@@ -116,4 +116,20 @@ Ensure you have the following before starting:
    kubectl get service frontend-service
    ```
 
+### Step 6: Verify Deployment
+1. Open a browser and navigate to the external IP address of the frontend service.
+2. Verify the application is running successfully.
+
+## Conclusion
+
+This documentation provided step-by-step guidance on deploying a MERN application using AKS. By leveraging Kubernetes, the application achieves better scalability and fault tolerance. For further improvements or queries, feel free to contribute to the repository.
+
+Author: Aditya Vakharia
+
+```bash
+Let me know if you need any modifications!
+```
+
+
+
 
